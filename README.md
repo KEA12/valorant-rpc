@@ -19,16 +19,16 @@ Some newly added features and fixes added by me:
 Before (Default):
 
 <a>
-  <img src="Demos/before.png" alt="Before Demo">
+  <img src="Demos/before.png" alt="Before Demo" width="250" height="112">
 <a/>
 
 After (RPC):
 
 <p>
-<img src="Demos/after1.png" alt="After Demo 1">
-<img src="Demos/after2.png" alt="After Demo 2">
-<img src="Demos/after3.png" alt="After Demo 3">
-<img src="Demos/after4.png" alt="After Demo 4">
+<img src="Demos/after1.png" alt="After Demo 1" width="250" height="112">
+<img src="Demos/after2.png" alt="After Demo 2" width="250" height="112">
+<img src="Demos/after3.png" alt="After Demo 3" width="250" height="112">
+<img src="Demos/after4.png" alt="After Demo 4" width="250" height="112">
 </p>
   
 
