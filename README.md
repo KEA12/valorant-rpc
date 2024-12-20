@@ -16,8 +16,19 @@ Some newly added features and fixes added by me:
   - Custom games now dynamically update their information (agents, gamemode etc)
   - and much more!
 
+Before (Default):
+
+<a>
+  <img src="Demos/before.png" alt="Before Demo">
+<a/>
+
+After (RPC):
+
+<p>
+<img src="Demos/after1.png" alt="After Demo 1">
+<img src="Demos/after2.png" alt="After Demo 2">
+</p>
   
-(insert images here)
 
 ## Installation
   - Download the latest [release](https://github.com/KEA12/valorant-rpc/releases/latest)
@@ -30,7 +41,7 @@ Some newly added features and fixes added by me:
   - The program automatically exits once the VALORANT process is closed
 
 ## Issues or Problems
-  - Make an [issue](https://github.com/KEA12/valorant-rpc/issues) or feel free to open a pull request :)
+  - Make an [issue](https://github.com/KEA12/valorant-rpc/issues) or feel free to open a [pull request](https://github.com/KEA12/valorant-rpc/pulls) :)
 
 ## Can I get banned?
   - No! The program does not give you any advantage whatsoever and does not modify the game process or files. You only have access to already known information.
