@@ -6,7 +6,7 @@
 [![License][license-shield]][license-url]
 
 ## About
-  VALORANT Discord Rich-Presence (RPC) gathers real-time ingame information and display it on your Discord Profile, replacing the boring default Discord status! **This is a heavy fork/continuation of [colinhartigan's RPC](https://github.com/colinhartigan/valorant-rpc), which is now unmaintained and archived. This project aims to maintain it and add new features for the forseeable feature.** Unfinished features have been removed, including configuration window and the command line window that appears on run.
+  VALORANT Discord Rich-Presence (RPC) gathers real-time ingame information and displays it on your Discord Profile, replacing the boring default Discord status! **This is a heavy fork/continuation of [colinhartigan's RPC](https://github.com/colinhartigan/valorant-rpc), which is now unmaintained and archived. This project aims to maintain it and add new features for the forseeable future.** Unfinished features have been removed, including configuration window and the command line window that appears on run.
   
 Some newly added features and fixes added by me:
   - New Maps & Agents now supported
