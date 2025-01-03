@@ -6,13 +6,12 @@
 [![License][license-shield]][license-url]
 
 ## About
-  VALORANT Discord Rich-Presence (RPC) gathers real-time ingame information and display it on your Discord Profile, replacing the boring default Discord status! **This is a heavy fork/continuation of [colinhartigan's RPC](https://github.com/colinhartigan/valorant-rpc), which is now unmaintained and archived. This project aims to maintain it and add new features for the forseeable feature.** Unfinished features have been removed, including configuration window and the command line window that appears on run. 
+  VALORANT Discord Rich-Presence (RPC) gathers real-time ingame information and display it on your Discord Profile, replacing the boring default Discord status! **This is a heavy fork/continuation of [colinhartigan's RPC](https://github.com/colinhartigan/valorant-rpc), which is now unmaintained and archived. This project aims to maintain it and add new features for the forseeable feature.** Unfinished features have been removed, including configuration window and the command line window that appears on run.
   
 Some newly added features and fixes added by me:
   - New Maps & Agents now supported
   - New Gamemodes now supported (Premier ingame functionality not guaranteed, as I haven't had a chance to play Premier with this yet)
   - All icons updated to their latest
-  - Automatic updater
   - Custom games now dynamically update their information (agents, gamemode etc)
   - and much more!
 
@@ -34,7 +33,7 @@ After (RPC):
 
 ## Installation
   - Download the latest [release](https://github.com/KEA12/valorant-rpc/releases/latest)
-  - Replace your VALORANT Shortcut with the .exe (to barely change the way you usually launch VALORANT)
+  - Replace your VALORANT Shortcut with the .exe (optional)
 
 
 ## How to use
@@ -42,11 +41,17 @@ After (RPC):
   - If VALORANT is already opened, you can still run the .exe and it will overtake your Discord status
   - The program automatically exits once the VALORANT process is closed
 
+
 ## Issues or Problems
-  - Make an [issue](https://github.com/KEA12/valorant-rpc/issues) or feel free to open a [pull request](https://github.com/KEA12/valorant-rpc/pulls) :)
+  - Open an [issue](https://github.com/KEA12/valorant-rpc/issues) or feel free to open a [pull request](https://github.com/KEA12/valorant-rpc/pulls) :)
+
 
 ## Can I get banned?
-  - No! The program does not give you any advantage whatsoever and does not modify the game process or files. You only have access to already known information.
+  - No! The program does not give you any advantage whatsoever and does not modify the game process or files, neither does it display anything on your screen.
+    
+
+## I wish to exit the Program
+  - If (for whatever reason) you want to close the RPC program, simply run the .exe again while it's already running and it will ask you if you want to close all RPC instances, while leaving VALORANT open
 
 
 ## Disclaimer
