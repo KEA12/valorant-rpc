@@ -91,6 +91,9 @@ class Startup:
     
     
     def check_region(self):
+        if not Processes.are_processes_running():
+            self.start_game()
+                    
         client = valclient.Client(region = "eu")
         client.activate()
         sessions = client.riotclient_session_fetch_sessions()
