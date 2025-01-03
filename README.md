@@ -67,7 +67,7 @@ After (RPC):
 [releases-shield]: https://img.shields.io/github/downloads/KEA12/valorant-rpc/total?style=for-the-badge
 [releases-url]: https://github.com/KEA12/valorant-rpc/releases
 [license-shield]: https://img.shields.io/github/license/KEA12/valorant-rpc?style=for-the-badge
-[license-url]: https://github.com/KEA12/valorant-rpc/blob/v3/LICENSE.txt
+[license-url]: https://github.com/KEA12/valorant-rpc?tab=MIT-1-ov-file
 [language-shield]: https://img.shields.io/github/languages/top/KEA12/valorant-rpc?logo=python&logoColor=yellow&style=for-the-badge
 [language-url]: https://www.python.org/
 
