@@ -51,8 +51,9 @@ class Startup:
         #    Updater.update_program(download_url, version)
         #else:
         #    Updater.check_for_new_version(self.config)
-        Config.check_config_version()
-        Updater.check_for_new_version(self.config)
+        
+        if not Config.check_config_version():
+            Updater.check_for_new_version(self.config)
         if not Processes.are_processes_running():
             self.start_game()
         

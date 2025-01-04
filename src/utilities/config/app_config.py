@@ -52,3 +52,5 @@ class Config:
     def check_config_version():
         if Reader.get_config_value("version") != default_config["version"]:
             Config.update_version(default_config["version"])
+            return default_config["version"]
+        return None
