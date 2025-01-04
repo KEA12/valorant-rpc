@@ -1,4 +1,5 @@
 from .mappings import Mappings
+from ..utilities.logging import Logger
 
 class Reader:
     
@@ -19,5 +20,6 @@ class Reader:
                 if k == key:
                     return value
             return key
-        except:
+        except Exception as e:
+            Logger.debug("get_config_key: " + str(e))
             return key

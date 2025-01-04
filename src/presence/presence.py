@@ -4,6 +4,7 @@ from pypresence import Presence as PyPresence
 from pypresence.exceptions import InvalidPipe
 from .presences import (ingame, menu, startup, pregame)
 from ..content.content_loader import Loader
+from ..utilities.logging import Logger
 
 class Presence:
     def __init__(self, config):
@@ -14,7 +15,7 @@ class Presence:
             self.rpc = PyPresence(client_id = "1225506034576261131")
             self.rpc.connect()
         except InvalidPipe as e:
-            raise Exception(e)
+            raise Exception("__init__ (presence.py): "  + str(e))
         self.content_data = {}
         
     
@@ -45,7 +46,6 @@ class Presence:
             asyncio.set_event_loop(loop)
             
             self.main_loop()
-            
     
         except Exception as e:
             ctypes.windll.user32.MessageBoxW(0, f"An error has occured during execution:\n\n{e}\n\nPress OK to exit.", u"Error (VALORANT-RPC)", 16)

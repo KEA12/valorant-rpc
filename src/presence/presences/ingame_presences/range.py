@@ -2,6 +2,7 @@ import time
 from ..menu_presences.away import presence as away
 from ...presence_utilities import Utilities
 from ....utilities.filepath import Filepath
+from ....utilities.logging import Logger
 
 class Range_Session:
     def __init__(self, rpc, client, data, match_id, content_data, config):
@@ -49,5 +50,6 @@ class Range_Session:
                     )
                 
                 time.sleep(5)
-            except Exception:
+            except Exception as e:
+                Logger.debug("main_loop (range.py): " + str(e))
                 return

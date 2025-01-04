@@ -1,5 +1,7 @@
 import iso8601, re
 
+from ..utilities.logging import Logger
+
 class Utilities:
     
     @staticmethod
@@ -7,7 +9,7 @@ class Utilities:
         for key in pref:
             if key == "map":
                 gmap = Utilities.fetch_map_data(coregame_data, content_data)
-                return f"splash_{gmap[0].lower()}"
+                return f"splash_{gmap[0].lower()}", gmap[0]
             if key == "rank":
                 return Utilities.fetch_rank_data(client, content_data)
             if key == "agent":
@@ -18,7 +20,8 @@ class Utilities:
     def fetch_rank_data(client, content_data):
         try:
             mmr = client.fetch_mmr()["QueueSkills"]["competitive"]["SeasonalInfoBySeasonID"][content_data["season"]["season_uuid"]]
-        except:
+        except Exception as e:
+            Logger.debug("fetch_rank_data: " + str(e))
             return "rank_0", "Rank not found"
         rank_data = {}
         for tier in content_data["comp_tiers"]:
@@ -34,7 +37,7 @@ class Utilities:
     def fetch_map_data(coregame_data, content_data):
         for gmap in content_data["maps"]:
             if gmap["path"] == coregame_data["MapID"]:
-                return gmap["display_name"]
+                return gmap["display_name"], 
         return "", ""
     
 

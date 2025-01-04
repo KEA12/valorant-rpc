@@ -1,5 +1,7 @@
 import os, json
 
+from .logging import Logger
+
 class Riot_Client_Services:
     
     @staticmethod
@@ -12,5 +14,6 @@ class Riot_Client_Services:
                 if not os.access(rcs_path, os.X_OK):
                     return None
                 return rcs_path
-        except FileNotFoundError:
+        except FileNotFoundError as e:
+            Logger.debug("get_rcs_path: " + str(e))
             return None

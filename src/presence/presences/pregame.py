@@ -2,6 +2,7 @@ import time
 
 from ..presence_utilities import Utilities
 from valclient.exceptions import PhaseError
+from ...utilities.logging import Logger
 
 def presence(rpc, client = None, data = None, content_data = None, config = None):
     party_state, party_size = Utilities.build_party_state(data)
@@ -41,5 +42,6 @@ def presence(rpc, client = None, data = None, content_data = None, config = None
             party_id = data["partyId"]
         )
     
-    except PhaseError:
+    except PhaseError as e:
+        Logger.debug("presence (pregame.py): " + str(e))
         pass

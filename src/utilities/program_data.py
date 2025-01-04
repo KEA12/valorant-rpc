@@ -1,6 +1,7 @@
 import os, sys, ctypes, json
 
 from .filepath import Filepath
+from .logging import Logger
 
 class Program_data:
     
@@ -33,7 +34,8 @@ class Program_data:
             with open(Program_data.installs_path) as f:
                 installs = json.load(f)
                 return installs
-        except:
+        except Exception as e:
+            Logger.debug("fetch_installs: " + str(e))
             return Program_data.create_installs_file()
         
     @staticmethod

@@ -7,6 +7,7 @@ from .utilities.logging import Logger
 from .utilities.rcs import Riot_Client_Services
 from .utilities.killable_thread import Thread
 from .utilities.updater import Updater
+from .utilities.logging import Logger
 from .mapping.reader import Reader
 from .presence.presence import Presence
 
@@ -69,7 +70,8 @@ class Startup:
             self.client = valclient.Client(region = Reader.get_config_value("region", 0))
             self.client.activate()
             self.presence.client = self.client
-        except:
+        except Exception as e:
+            Logger.debug("setup_client: " + str(e))
             self.check_region()
             
     
@@ -114,7 +116,6 @@ class Startup:
         launch_timer = 0
         
         psutil.subprocess.Popen([path, "--launch-product=valorant", "--launch-patchline=live"])
-        print()
         while not Processes.are_processes_running():
             launch_timer += 1
             if launch_timer >= launch_timeout:

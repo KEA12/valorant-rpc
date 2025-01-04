@@ -3,6 +3,7 @@ import os, json
 from valclient.client import Client
 from ..filepath import Filepath
 from ...mapping.reader import Reader
+from ..logging import Logger
 
 
 default_config = {
@@ -27,7 +28,8 @@ class Config:
             with open(Filepath.get_path(os.path.join(Filepath.get_appdata_folder(), "config.json"))) as f:
                 config = json.load(f)
                 return config
-        except:
+        except Exception as e:
+            Logger.debug("fetch_config: " + str(e))
             return Config.create_default_config()
             
     @staticmethod
