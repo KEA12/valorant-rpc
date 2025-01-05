@@ -10,7 +10,7 @@
   
 Some newly added features and fixes added by me:
   - New Maps & Agents now supported
-  - New Gamemodes now supported (Premier ingame functionality not guaranteed, as I haven't had a chance to play Premier with this yet)
+  - New Gamemodes now supported (including Premier)
   - All icons updated to their latest
   - Custom games now dynamically update their information (agents, gamemode etc)
   - and much more!
