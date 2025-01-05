@@ -38,7 +38,7 @@ After (RPC):
 
 ## How to use
   - Launch the downloaded .exe instead of VALORANT
-  - If VALORANT is already opened, you can still run the .exe and it will overtake your Discord status
+    - If VALORANT is already opened, you can still run the .exe and it will overtake your Discord status
   - The program automatically exits once the VALORANT process is closed
 
 
