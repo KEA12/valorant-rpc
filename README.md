@@ -64,7 +64,7 @@ After (RPC):
 
 [stars-shield]: https://img.shields.io/github/stars/KEA12/valorant-rpc?style=for-the-badge&logo=github
 [stars-url]: https://github.com/KEA12/valorant-rpc/stargazers
-[releases-shield]: https://img.shields.io/github/downloads/KEA12/valorant-rpc/total?style=for-the-badge
+[releases-shield]: https://img.shields.io/github/downloads/KEA12/valorant-rpc/total?style=for-the-badge&color=blue
 [releases-url]: https://github.com/KEA12/valorant-rpc/releases
 [license-shield]: https://img.shields.io/github/license/KEA12/valorant-rpc?style=for-the-badge
 [license-url]: https://github.com/KEA12/valorant-rpc?tab=MIT-1-ov-file
