@@ -37,7 +37,7 @@ class Utilities:
     def fetch_map_data(coregame_data, content_data):
         for gmap in content_data["maps"]:
             if gmap["path"] == coregame_data["MapID"]:
-                return gmap["display_name"], 
+                return gmap["display_name"]
         return "", ""
     
 
