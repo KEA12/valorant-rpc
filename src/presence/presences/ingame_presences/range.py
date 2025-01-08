@@ -15,7 +15,7 @@ class Range_Session:
         
         data["MapID"] = "/Game/Maps/Poveglia/Range"
         self.start_time = time.time()
-        self.map_name, self.mode_name = Utilities.fetch_map_data(data, content_data)
+        self.map_name = Utilities.fetch_map_data(data, content_data)
         self.map_image = "splash_range"
         self.small_image = ""
         self.small_text = ""
@@ -39,7 +39,7 @@ class Range_Session:
                     
                     self.rpc.update(
                         state = party_state,
-                        details = self.mode_name,
+                        details = "Practicing on " + self.map_name,
                         start = self.start_time,
                         large_image = self.map_image,
                         large_text = "Practicing on " + self.map_name,

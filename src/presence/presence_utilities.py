@@ -38,7 +38,7 @@ class Utilities:
         for gmap in content_data["maps"]:
             if gmap["path"] == coregame_data["MapID"]:
                 return gmap["display_name"]
-        return "", ""
+        return ""
     
 
     @staticmethod
