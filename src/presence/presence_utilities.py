@@ -9,7 +9,7 @@ class Utilities:
         for key in pref:
             if key == "map":
                 gmap = Utilities.fetch_map_data(coregame_data, content_data)
-                return f"splash_{gmap[0].lower()}", gmap[0]
+                return f"splash_{gmap.lower()}", str(gmap)
             if key == "rank":
                 return Utilities.fetch_rank_data(client, content_data)
             if key == "agent":
