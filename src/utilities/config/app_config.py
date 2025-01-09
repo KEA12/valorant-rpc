@@ -9,7 +9,7 @@ from ..logging import Logger
 default_config = {
     "region": ["", Client.fetch_regions()],
     "client_id": 1225506034576261131,
-    "version": "v1.0.3"
+    "version": "v1.0.4"
 }
 
 class Config:
