@@ -10,6 +10,7 @@ from .utilities.updater import Updater
 from .utilities.logging import Logger
 from .mapping.reader import Reader
 from .presence.presence import Presence
+from win10toast_click import ToastNotifier
 
 
 class Startup:
@@ -57,6 +58,12 @@ class Startup:
         if not Processes.are_processes_running():
             self.start_game()
         
+        ToastNotifier().show_toast(
+            title = "VALORANT RPC Now running!",
+            msg = "Your status is now being enhanced.\nRun the program again to exit.",
+            threaded = True
+        )
+        
         self.setup_client()
         
         if self.client.fetch_presence() is None:
@@ -64,6 +71,7 @@ class Startup:
             
         self.dispatch_presence()
         self.presence_thread.stop()
+
         
         
     def setup_client(self):

@@ -4,7 +4,6 @@ from pypresence import Presence as PyPresence
 from pypresence.exceptions import InvalidPipe
 from .presences import (ingame, menu, startup, pregame)
 from ..content.content_loader import Loader
-from ..utilities.logging import Logger
 
 class Presence:
     def __init__(self, config):
@@ -41,7 +40,7 @@ class Presence:
             
             if presence_data is not None:
                 self.update_presence(presence_data["sessionLoopState"], presence_data)
-                
+            
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             
