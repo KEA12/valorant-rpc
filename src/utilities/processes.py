@@ -31,11 +31,3 @@ class Processes:
                 if not proc.pid == current_exe_pid:
                     proc.terminate()
         os._exit(0)
-        
-    
-    @staticmethod
-    def notification_close_program():
-        if ctypes.windll.user32.MessageBoxW(0, f"Are you sure you want to exit?", "Are you sure? (VALORANT-RPC)", 4 | 0x20) == 6:
-            Processes.terminate_all_processes()
-        else:
-            return
