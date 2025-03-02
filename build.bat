@@ -31,15 +31,9 @@ if '%errorlevel%' NEQ '0' (
 
 set PYTHON_PATH=
 for /f "delims=" %%p in ('py -c "import sys; print(sys.executable)" 2^>nul') do set PYTHON_PATH=%%p
-
-REM 
 if not defined PYTHON_PATH for %%p in (python.exe) do set PYTHON_PATH=%%~dp$PATH:p
-
-REM 
 if not defined PYTHON_PATH if exist "%LOCALAPPDATA%\Programs\Python\Python39\python.exe" set PYTHON_PATH=%LOCALAPPDATA%\Programs\Python\Python39\python.exe
 if not defined PYTHON_PATH if exist "C:\Python39\python.exe" set PYTHON_PATH=C:\Python39\python.exe
-
-REM 
 if not defined PYTHON_PATH (
     echo Error: Python installation not found. Ensure Python is installed and available.
     pause
@@ -48,9 +42,12 @@ if not defined PYTHON_PATH (
 
 echo Python found at: %PYTHON_PATH%
 
+echo Generating Versioning file...
+"%PYTHON_PATH%" update_versioning.py
+
 "%PYTHON_PATH%" -m pipreqs.pipreqs --force
 "%PYTHON_PATH%" -m pip install -r requirements.txt
 "%PYTHON_PATH%" -m pip install -r requirements.txt --upgrade
-"%PYTHON_PATH%" -m PyInstaller main.py --name="VALORANT (RPC)" --icon=favicon.ico --hidden-import "pystray._win32" --onefile --noconsole
+"%PYTHON_PATH%" -m PyInstaller main.py --name="VALORANT (RPC)" --icon=favicon.ico --onefile --noconsole --version-file version.txt --add-data "favicon.ico;."
 
 pause
