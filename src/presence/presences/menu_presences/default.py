@@ -1,10 +1,10 @@
 from .away import presence as away
 from ...presence_utilities import Utilities
 
-def presence(rpc, client = None, data = None, content_data = None, config = None):
+def presence(rpc, client = None, data = None, content_data = None):
     is_afk = data["isIdle"]
     if is_afk:
-        away(rpc, client, data, content_data, config)
+        away(rpc, client, data, content_data)
     
     else:
         party_state, party_size = Utilities.build_party_state(data)

@@ -1,14 +1,12 @@
 import valclient, time, traceback, psutil, os, ctypes
 
 from .utilities.processes import Processes
-from .utilities.program_data import Program_data
-from .utilities.config.app_config import Config
+from .utilities.filepath import Filepath
 from .utilities.logging import Logger
 from .utilities.rcs import Riot_Client_Services
 from .utilities.killable_thread import Thread
 from .utilities.updater import Updater
 from .utilities.logging import Logger
-from .mapping.reader import Reader
 from .presence.presence import Presence
 from win10toast_click import ToastNotifier
 
@@ -17,18 +15,11 @@ class Startup:
     def __init__(self):
         if not Processes.is_program_already_running():
             Logger.create_logger()
-            Program_data.update_file_location()
-            self.config = Config.fetch_config()
-            self.installs = Program_data.fetch_installs()
-            Logger.debug(self.config)
             self.client = None
-            Reader.config = self.config
-            
-            if Reader.get_config_value("region", 0) == "":
-                self.check_region()
+            self.region = self.check_region()
                 
             try:
-                self.presence = Presence(self.config)
+                self.presence = Presence()
             except Exception:
                 traceback.print_exc()
                 ctypes.windll.user32.MessageBoxW(0, u"Discord not detected. Starting VALORANT without presence.\nOpen your Discord and start the program again.\n\nPress OK to launch VALORANT and exit.", u"Error (VALORANT-RPC)", 16)
@@ -53,22 +44,18 @@ class Startup:
         #else:
         #    Updater.check_for_new_version(self.config)
         
-        if not Config.check_config_version():
-            Updater.check_for_new_version(self.config)
+        Updater.check_for_new_version("balls")
         if not Processes.are_processes_running():
             self.start_game()
-        
+        self.setup_client()
         ToastNotifier().show_toast(
-            title = "VALORANT RPC Now running!",
+            title = "Now running!",
             msg = "Your status is now being enhanced.\nRun the program again to exit.",
+            icon_path = Filepath.get_path('favicon.ico'),
             threaded = True
         )
-        
-        self.setup_client()
-        
         if self.client.fetch_presence() is None:
             self.wait_for_presence()
-            
         self.dispatch_presence()
         self.presence_thread.stop()
 
@@ -76,12 +63,11 @@ class Startup:
         
     def setup_client(self):
         try:
-            self.client = valclient.Client(region = Reader.get_config_value("region", 0))
+            self.client = valclient.Client(region = self.region)
             self.client.activate()
             self.presence.client = self.client
         except Exception as e:
             Logger.debug("setup_client: " + str(e))
-            self.check_region()
             
     
     def wait_for_presence(self):
@@ -114,9 +100,7 @@ class Startup:
                 for arg in launch_args:
                     if "-ares-deployment" in arg:
                         region = arg.replace("-ares-deployment=", "")
-                        self.config[Reader.get_config_key("region")][0] = region
-                        Config.modify_config(self.config)
-                        time.sleep(5)
+                        return region
                         
                         
     def start_game(self):

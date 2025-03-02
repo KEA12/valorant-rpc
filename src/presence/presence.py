@@ -6,8 +6,7 @@ from .presences import (ingame, menu, startup, pregame)
 from ..content.content_loader import Loader
 
 class Presence:
-    def __init__(self, config):
-        self.config = config
+    def __init__(self):
         self.client = None
         self.loaded = False
         try:
@@ -60,4 +59,4 @@ class Presence:
         }
         
         if ptype in presence_types.keys():
-            presence_types[ptype].presence(self.rpc, client = self.client, data = data, content_data = self.content_data, config = self.config)
+            presence_types[ptype].presence(self.rpc, client = self.client, data = data, content_data = self.content_data)

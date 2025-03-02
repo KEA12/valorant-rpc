@@ -1,4 +1,4 @@
-def presence(rpc, client = None, data = None, content_data = None, config = None):
+def presence(rpc, client = None, data = None, content_data = None):
     rpc.update(
         state = "Launching...",
         large_image = "game_icon",

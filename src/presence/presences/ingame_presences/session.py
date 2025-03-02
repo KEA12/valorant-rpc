@@ -6,10 +6,9 @@ from ....utilities.filepath import Filepath
 from ..menu_presences.away import presence as away
 
 class Game_Session:
-    def __init__(self, rpc, client, match_id, content_data, config):
+    def __init__(self, rpc, client, match_id, content_data):
         self.rpc = rpc
         self.client = client
-        self.config = config
         self.content_data = content_data
         self.match_id = match_id
         self.puuid = self.client.puuid

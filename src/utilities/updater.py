@@ -13,10 +13,10 @@
 
 import requests, ctypes, webbrowser, os
 
-from ..mapping.reader import Reader
 
 GITHUB_REPO = "https://api.github.com/repos/KEA12/valorant-rpc/releases/latest"
 USER_FRIENDLY = "https://github.com/KEA12/valorant-rpc/releases/latest"
+VERSION = "v1.1.0"
 
 class Updater:
     
@@ -51,9 +51,8 @@ class Updater:
     
     @staticmethod
     def check_for_new_version(config):
-        current_version = Reader.get_config_value("version")
         latest_version = Updater.get_download_url()
-        if latest_version and latest_version != current_version:
+        if latest_version and latest_version != VERSION:
             Updater.prompt_update(latest_version)
                 
             

@@ -1,6 +1,6 @@
 from ...presence_utilities import Utilities
 
-def presence(rpc, client = None, data = None, content_data = None, config = None):
+def presence(rpc, client = None, data = None, content_data = None):
     party_state, party_size = Utilities.build_party_state(data)
     small_image, mode_name = Utilities.fetch_mode_data(data, content_data)
     small_text = mode_name

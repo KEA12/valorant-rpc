@@ -4,7 +4,7 @@ from ..presence_utilities import Utilities
 from valclient.exceptions import PhaseError
 from ...utilities.logging import Logger
 
-def presence(rpc, client = None, data = None, content_data = None, config = None):
+def presence(rpc, client = None, data = None, content_data = None):
     party_state, party_size = Utilities.build_party_state(data)
     custom = False
     custom_game_mode = ""
