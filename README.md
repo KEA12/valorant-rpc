@@ -51,7 +51,7 @@ After (RPC):
     
 
 ## I wish to exit the Program
-  - If (for whatever reason) you want to close the RPC program, simply run the .exe again while it's already running and it will ask you if you want to close all RPC instances, while leaving VALORANT open
+  - If (for whatever reason) you want to close the RPC program, simply run the .exe again while it's already running and it will ask you if you want to close all RPC instances, while leaving VALORANT open.
 
 
 ## Disclaimer
